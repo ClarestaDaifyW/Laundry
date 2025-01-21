@@ -11,14 +11,14 @@
         android:id="@+id/sapa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="Selamat Pagi, Claresta"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tanggal"
         android:layout_width="wrap_content"
@@ -31,9 +31,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv1"
-        android:layout_width="253dp"
-        android:layout_height="303dp"
+        android:id="@+id/c1"
+        android:layout_width="284dp"
+        android:layout_height="255dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="10dp"
@@ -73,8 +73,8 @@
             android:textSize="16dp" />
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="78dp"
+            android:layout_width="81dp"
+            android:layout_height="60dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="49dp"
             android:src="@drawable/akun2" />
@@ -83,30 +83,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="140dp"
             android:text="Pegawai"
             android:textSize="16dp" />
 
         <ImageView
-            android:layout_width="103dp"
-            android:layout_height="78dp"
+            android:layout_width="81dp"
+            android:layout_height="59dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="115dp"
             android:src="@drawable/pegawai" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="240dp"
             android:layout_marginStart="150dp"
+            android:layout_marginTop="195dp"
             android:text="cabang"
             android:textSize="16dp" />
 
         <ImageView
-            android:layout_width="110dp"
-            android:layout_height="77dp"
+            android:layout_width="93dp"
+            android:layout_height="59dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="180dp"
             android:src="@drawable/cabang" />
 
 
@@ -117,7 +117,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/Cv3"
         app:layout_constraintTop_toBottomOf="@id/Cv4">
@@ -143,7 +143,7 @@
         android:id="@+id/Cv3"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toStartOf="@id/Cv2"
         app:layout_constraintStart_toEndOf="@id/Cv6"
         app:layout_constraintTop_toBottomOf="@id/cv5">
@@ -167,7 +167,7 @@
         android:id="@+id/Cv4"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cv5"
         app:layout_constraintTop_toBottomOf="@id/sapa">
@@ -191,7 +191,7 @@
         android:id="@+id/cv5"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@id/Cv4"
         app:layout_constraintStart_toEndOf="@id/Cv7"
         app:layout_constraintTop_toBottomOf="@id/sapa">
@@ -215,9 +215,9 @@
         android:id="@+id/Cv6"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toStartOf="@id/Cv3"
-        app:layout_constraintStart_toEndOf="@id/cv1"
+        app:layout_constraintStart_toEndOf="@id/c1"
         app:layout_constraintTop_toBottomOf="@id/Cv7">
 
         <TextView
@@ -232,16 +232,16 @@
             android:layout_width="116dp"
             android:layout_height="74dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/Pelanggan" />
+            android:src="@drawable/pelanggan2" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Cv7"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@id/cv5"
-        app:layout_constraintStart_toEndOf="@id/cv1"
+        app:layout_constraintStart_toEndOf="@id/c1"
         app:layout_constraintTop_toBottomOf="@id/sapa">
 
         <TextView
