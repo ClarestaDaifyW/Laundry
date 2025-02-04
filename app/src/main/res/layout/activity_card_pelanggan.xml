@@ -60,26 +60,23 @@
                android:layout_height="wrap_content"
                android:orientation="horizontal"
                android:gravity="center"
+               android:layout_gravity="center"
                android:layout_marginTop="15dp">
             <Button
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:text="HUBUNGI"
                 android:textSize="18dp"
-                android:layout_marginStart="8dp"
                 />
                <Button
                    android:layout_width="140dp"
                    android:layout_height="wrap_content"
                    android:text="LIHAT"
                    android:textSize="18dp"
-                   android:layout_marginStart="8dp"/>
+                   android:layout_marginStart="15dp"/>
 
 
            </LinearLayout>
-
-
-
 
         </LinearLayout>
 
