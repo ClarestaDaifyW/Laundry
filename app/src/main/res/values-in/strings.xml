@@ -8,4 +8,23 @@
     <string name="btn_HUBUNGI">Hubungi</string>
     <string name="btn_LIHAT">Lihat</string>
     <string name="tvCARD_PELANGGAN_Nama">Nama Pelanggan</string>
+    <string name="tvCARD_PEGAWAI_ID">ID Pegawai</string>
+    <string name="tvCARD_PEGAWAI_Nama">Nama Pegawai</string>
+    <string name="tvCARD_PEGAWAI_daftar">Terdaftar</string>
+    <string name="tvCARD_PEGAWAI_Almt">Alamat</string>
+    <string name="tvCARD_PEGAWAI_NoHP">No HP</string>
+    <string name="btn_HUBUNGI_pegawai">Hubungi</string>
+    <string name="btn_LIHAT_pegawai">Lihat</string>
+    <string name="tv1_TambahPelanggan">TAMBAH PELANGGAN</string>
+    <string name="tv2_NamaLengkap">Nama Lengkap</string>
+    <string name="ET1_NamaLengkap">Nama Lengkap</string>
+    <string name="tv3_Alamat">Alamat</string>
+    <string name="ET2_Alamat">Alamat</string>
+    <string name="tv4_NoHP">NoHP</string>
+    <string name="ET3_NoHP">NoHP</string>
+    <string name="tv5_NamaCabang">Nama Cabang</string>
+    <string name="ET4_NamaCabang">Nama Cabang</string>
+    <string name="btn_Simpan">Simpan</string>
+    <string name="tv1_TambahPegawai">TAMBAH PEGAWAI</string>
+    <string name="tv2_NamaLengkap_Pegawai">Nama Lengkap</string>
 </resources>

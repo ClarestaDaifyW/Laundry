@@ -16,8 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
-            android:text="ID Pegawai"
-            android:textColor="@color/black"
+            android:text="@string/tvCARD_PEGAWAI_ID"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="italic" />
     </RelativeLayout>
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="Nama Pegawai"
+            android:text="@string/tvCARD_PEGAWAI_Nama"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -45,9 +45,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Terdaftar"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:text="@string/tvCARD_PEGAWAI_daftar"
+            android:textSize="18dp"
+            android:textStyle="normal"/>
 
         <TextView
             android:id="@+id/tvCARD_PEGAWAI_Almt"
@@ -55,9 +55,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Alamat"
-            android:textColor="@color/black"
-            android:textSize="17dp" />
+            android:text="@string/tvCARD_PEGAWAI_Almt"
+            android:textSize="17dp"
+            android:textStyle="normal"/>
 
         <TextView
             android:id="@+id/tvCARD_PEGAWAI_NoHP"
@@ -65,9 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="No HP"
-            android:textColor="@color/black"
-            android:textSize="17dp" />
+            android:text="@string/tvCARD_PEGAWAI_NoHP" android:textSize="17dp"
+            android:textStyle="normal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,19 +77,19 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_HUBUNGI"
+                android:id="@+id/btn_HUBUNGI_pegawai"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:text="Hubungi"
+                android:text="@string/btn_HUBUNGI_pegawai"
                 android:textSize="18dp"
                 android:backgroundTint="#8BA455"/>
 
             <Button
-                android:id="@+id/btn_LIHAT"
+                android:id="@+id/btn_LIHAT_pegawai"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:text="Lihat"
+                android:text="@string/btn_LIHAT_pegawai"
                 android:textSize="18dp"
                 android:backgroundTint="#DCC56E"/>
 
