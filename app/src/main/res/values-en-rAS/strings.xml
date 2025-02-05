@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Laundry</string>
+    <string name="tvCARD_PELANGGAN_ID">Customer ID</string>
+    <string name="tvCARD_PELANGGAN_daftar">Registered</string>
+    <string name="tvCARD_PELANGGAN_Almt">Address</string>
+    <string name="tvCARD_PELANGGAN_NoHP">Phone number</string>
+    <string name="btn_HUBUNGI">Contact</string>
+    <string name="btn_LIHAT">show</string>
+    <string name="tvCARD_PELANGGAN_Nama">Customer Name</string>
+</resources>
