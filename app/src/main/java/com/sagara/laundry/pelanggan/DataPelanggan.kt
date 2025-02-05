@@ -23,7 +23,6 @@ class DataPelanggan : AppCompatActivity() {
         tambah.setOnClickListener{
             val intent = Intent(this@DataPelanggan, TambahPelanggan:: class.java)
             startActivity(intent)
-
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
