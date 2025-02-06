@@ -26,4 +26,10 @@
     <string name="btn_Simpan">Simpan</string>
     <string name="tv1_TambahPegawai">Tambah Pegawai</string>
     <string name="tv2_NamaLengkap_Pegawai">Nama Lengkap</string>
+    <string name="validasi_alamat_pelanggan">Alamat Tidak Boleh Kosong</string>
+    <string name="validasi_noHP_pelanggan">No HP Tidak Boleh Kosong</string>
+    <string name="validasi_Cabang_pelanggan">Nama Cabang Tidak Boleh Kosong</string>
+    <string name="sukses_simpan_pelanggan">Data Berhasil Disimpan</string>
+    <string name="gagal_simpan_pelanggan">Data Gagal Disimpan</string>
+    <string name="validasi_nama_pelanggan">Nama Tidak Boleh Kosong</string>
 </resources>
