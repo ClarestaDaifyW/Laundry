@@ -33,4 +33,10 @@
     <string name="validasi_noHP_pelanggan">HP number must not be empty</string>
     <string name="validasi_Cabang_pelanggan">Branch Name Cannot Be Blank</string>
     <string name="sukses_simpan_pelanggan">Data Saved Successfully</string>
+    <string name="validasi_nama_pegawai">Name Cannot Be Blank</string>
+    <string name="validasi_alamat_pegawai">Address Cannot Be Blank</string>
+    <string name="validasi_noHP_pegawai">HP number must not be empty</string>
+    <string name="validasi_Cabang_pegawai">Branch Name Cannot Be Blank</string>
+    <string name="sukses_simpan_pegawai">Data Saved Successfully</string>
+    <string name="gagal_simpan_pegawai">Data Failed to Save</string>
 </resources>
