@@ -32,7 +32,7 @@
 
     <EditText
         android:id="@+id/ET1_NamaLengkap"
-        android:layout_width="371dp"
+        android:layout_width="341dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
     <EditText
         android:id="@+id/ET2_Alamat"
-        android:layout_width="371dp"
+        android:layout_width="341dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
     <EditText
         android:id="@+id/ET3_NoHP"
-        android:layout_width="371dp"
+        android:layout_width="341dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
@@ -101,7 +101,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
     <EditText
         android:id="@+id/ET4_NamaCabang"
-        android:layout_width="371dp"
+        android:layout_width="341dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
@@ -115,12 +115,12 @@
 
     <Button
         android:id="@+id/btn_Simpan"
-        android:layout_width="381dp"
+        android:layout_width="295dp"
         android:layout_height="60dp"
         android:text="@string/btn_Simpan"
         android:textSize="18dp"
         android:layout_marginTop="35dp"
-        android:background="@drawable/button"
+        android:backgroundTint="#CA8787"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ET4_NamaCabang" />

@@ -9,8 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:background="#577BC1">
+        android:layout_height="41dp"
+        android:background="#CA8787">
 
         <TextView
             android:id="@+id/tvCARD_PELANGGAN_ID"
@@ -27,7 +27,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="41dp"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_Nama"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -86,7 +86,7 @@
                 android:text="@string/btn_HUBUNGI"
                 android:textSize="18dp"
                 android:textStyle="normal"
-                android:backgroundTint="#8BA455"/>
+                android:backgroundTint="#CA8787"/>
 
             <Button
                 android:id="@+id/btn_LIHAT"
@@ -96,7 +96,7 @@
                 android:text="@string/btn_LIHAT"
                 android:textSize="18dp"
                 android:textStyle="normal"
-                android:backgroundTint="#DCC56E"/>
+                android:backgroundTint="#CA8787"/>
 
 
         </LinearLayout>

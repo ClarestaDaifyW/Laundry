@@ -7,8 +7,8 @@
     app:cardCornerRadius="16dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:background="#577BC1">
+        android:layout_height="41dp"
+        android:background="#CA8787">
 
         <TextView
             android:id="@+id/tvCARD_PEGAWAI_ID"
@@ -25,7 +25,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="41dp"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PEGAWAI_Nama"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_HUBUNGI_pegawai"
                 android:textSize="18dp"
-                android:backgroundTint="#8BA455"/>
+                android:backgroundTint="#CA8787"/>
 
             <Button
                 android:id="@+id/btn_LIHAT_pegawai"
@@ -91,7 +91,7 @@
                 android:layout_marginStart="15dp"
                 android:text="@string/btn_LIHAT_pegawai"
                 android:textSize="18dp"
-                android:backgroundTint="#DCC56E"/>
+                android:backgroundTint="#CA8787"/>
 
 
         </LinearLayout>
