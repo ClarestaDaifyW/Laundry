@@ -15,72 +15,51 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sagara.laundry.R
-import com.sagara.laundry.adapter.adapter_data_pelanggan
-import com.sagara.laundry.modeldata.ModelPelanggan
-import com.sagara.laundry.pelanggan.TambahPelanggan
+import com.sagara.laundry.adapter.adapter_data_pegawai
+import com.sagara.laundry.modeldata.ModelPegawai
 
 class DataPegawai : AppCompatActivity() {
-    private val database = FirebaseDatabase.getInstance()
-    private val myRef = database.getReference("pegawai")
-    private lateinit var rvData_Pegawai: RecyclerView
-    private lateinit var fabData_Pegawai_Tambah: FloatingActionButton
-    private lateinit var pegawaiList: ArrayList<ModelPelanggan>
-
-    lateinit var tambah : FloatingActionButton
-
+    val database = FirebaseDatabase.getInstance()
+    val myRef = database.getReference("pegawai")
+    lateinit var rvData_Pegawai: RecyclerView
+    lateinit var pegawaiList: ArrayList<ModelPegawai>
+    lateinit var fabData_Pegawai_Tambah: FloatingActionButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_data_pegawai)
-
-        initViews()
-
-        // Set layout manager untuk RecyclerView
-        val layoutManager = LinearLayoutManager(this).apply {
-            reverseLayout = true
-            stackFromEnd = true
-        }
-        rvData_Pegawai.layoutManager = layoutManager
+        init()
+        val layoutManager = LinearLayoutManager(this)
+        layoutManager.reverseLayout = true
+        layoutManager.stackFromEnd = true
+        rvData_Pegawai.layoutManager=layoutManager
         rvData_Pegawai.setHasFixedSize(true)
-
-        // Tombol FloatingActionButton untuk menambah data pelanggan
-        fabData_Pegawai_Tambah.setOnClickListener {
-            val intent = Intent(this@DataPegawai, TambahPelanggan::class.java)
-            startActivity(intent)
-        }
-
-        // Memanggil fungsi untuk mengambil data dari Firebase
+        pegawaiList = arrayListOf<ModelPegawai>()
+        tekan()
         getData()
-
-        tambah = findViewById(R.id.fabData_Pegawai_Tambah)
-
-        tambah.setOnClickListener{
-            val intent = Intent(this, TambahPegawai:: class.java)
-            startActivity(intent)
-        }
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
-    private fun initViews() {
+
+    fun init() {
         rvData_Pegawai = findViewById(R.id.rvData_Pegawai)
-        fabData_Pegawai_Tambah= findViewById(R.id.fabData_Pegawai_Tambah)
-        pegawaiList = ArrayList()
+        fabData_Pegawai_Tambah = findViewById(R.id.fabData_Pegawai_Tambah)
     }
-    private fun getData() {
-        val query = myRef.orderByChild("IDPelanggan").limitToLast(100)
+
+    fun getData(){
+        val query = myRef.orderByChild("idPegawai").limitToLast(100)
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
+                if (snapshot.exists()){
                     pegawaiList.clear()
-                    for (dataSnapshot in snapshot.children) {
-                        val pelanggan = dataSnapshot.getValue(ModelPelanggan::class.java)
-                        pelanggan?.let { pegawaiList.add(it) }
+                    for(dataSnapshot in snapshot.children){
+                        val pegawai = dataSnapshot.getValue(ModelPegawai::class.java)
+                        pegawaiList.add(pegawai!!)
                     }
-                    val adapter = adapter_data_pelanggan(pegawaiList)
+                    val adapter = adapter_data_pegawai(pegawaiList)
                     rvData_Pegawai.adapter = adapter
                     adapter.notifyDataSetChanged()
                 }
@@ -90,5 +69,12 @@ class DataPegawai : AppCompatActivity() {
                 Toast.makeText(this@DataPegawai, error.message, Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    fun tekan() {
+        fabData_Pegawai_Tambah.setOnClickListener {
+            val intent = Intent(this, TambahPegawai::class.java)
+            startActivity(intent)
+        }
     }
 }

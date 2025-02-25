@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sagara.laundry.R
 import com.sagara.laundry.modeldata.ModelPegawai
 
-class adapter_data_pegawai(private val listPegawain: ArrayList<ModelPegawai>) :
+class adapter_data_pegawai(private val listPegawai: ArrayList<ModelPegawai>) :
     RecyclerView.Adapter<adapter_data_pegawai.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -19,7 +19,7 @@ class adapter_data_pegawai(private val listPegawain: ArrayList<ModelPegawai>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = listPegawain[position]
+        val item = listPegawai[position]
         holder.tvID.text = item.tvCARD_PEGAWAI_ID
         holder.tvNama.text = item.tvCARD_PEGAWAI_Nama
         holder.tvDaftar.text = item.tvCARD_PEGAWAI_daftar
@@ -36,7 +36,7 @@ class adapter_data_pegawai(private val listPegawain: ArrayList<ModelPegawai>) :
     }
 
     override fun getItemCount(): Int {
-        return listPegawain.size
+        return listPegawai.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
