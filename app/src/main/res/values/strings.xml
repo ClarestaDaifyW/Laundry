@@ -38,4 +38,11 @@
     <string name="validasi_Cabang_pegawai">Nama Cabang Tidak Boleh Kosong</string>
     <string name="sukses_simpan_pegawai">Data Berhasil Disimpan</string>
     <string name="gagal_simpan_pegawai">Data Gagal Disimpan</string>
+    <string name="namaPegawai">nama pegawai</string>
+    <string name="tvCARD_PELANGGAN_cabang">Cabang</string>
+    <string name="tvCARD_PEGAWAI_cabang">Cabang</string>
+    <string name="Tv_ID_Layanan">ID Layanan</string>
+    <string name="Tv_NamaLayanan">Nama Layanan</string>
+    <string name="Tv_Harga">Harga</string>
+    <string name="Tv_NamaCabang">Nama Cabang</string>
 </resources>

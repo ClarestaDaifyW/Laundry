@@ -14,14 +14,14 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var pelanggan : ImageView
-    lateinit var pegawai : CardView
+    lateinit var pegawai : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) // Pastikan file XML sesuai
 
         pelanggan = findViewById(R.id.IV_Pelanggan)
-        pegawai = findViewById(R.id.Cv5)
+        pegawai = findViewById(R.id.imagepegawai)
 
         pelanggan.setOnClickListener {
             val intent = Intent(this@MainActivity, DataPelanggan:: class.java)
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         pegawai.setOnClickListener {
-            val intent = Intent( this, DataPegawai:: class.java)
+            val intent = Intent( this@MainActivity, DataPegawai:: class.java)
             startActivity(intent)
         }
 

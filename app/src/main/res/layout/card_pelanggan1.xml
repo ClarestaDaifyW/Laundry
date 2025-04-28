@@ -42,16 +42,6 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvCARD_PELANGGAN_daftar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PELANGGAN_daftar"
-            android:textStyle="normal"
-            android:textSize="18dp" />
-
-        <TextView
             android:id="@+id/tvCARD_PELANGGAN_Almt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,6 +60,26 @@
             android:text="@string/tvCARD_PELANGGAN_NoHP"
             android:textStyle="normal"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/tvCARD_PELANGGAN_daftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/tvCARD_PELANGGAN_daftar"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tvCARD_PELANGGAN_cabang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/tvCARD_PELANGGAN_cabang"
+            android:textSize="18dp"
+            android:textStyle="normal" />
 
         <LinearLayout
             android:layout_width="match_parent"

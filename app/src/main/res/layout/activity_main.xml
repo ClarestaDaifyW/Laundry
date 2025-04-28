@@ -242,6 +242,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="64dp"
+            android:id="@+id/imagepegawai"
             android:layout_marginTop="10dp"
             android:src="@drawable/pegawai" />
     </androidx.cardview.widget.CardView>

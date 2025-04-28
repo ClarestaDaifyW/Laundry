@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "799001387199",
+    "firebase_url": "https://laundryapp-8a085-default-rtdb.firebaseio.com",
+    "project_id": "laundryapp-8a085",
+    "storage_bucket": "laundryapp-8a085.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799001387199:android:aa3eba63a60f4cb75fe60a",
+        "android_client_info": {
+          "package_name": "com.sagara.laundry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY3ZCz-JYVC42Aa-IpjsxHwkP5yhnBDa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

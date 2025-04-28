@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
-            android:text="ID Layanan"
+            android:text="@string/Tv_ID_Layanan"
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="italic" />
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="Nama Layanan"
+            android:text="@string/Tv_NamaLayanan"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Harga"
+            android:text="@string/Tv_Harga"
             android:textStyle="normal"
             android:textSize="18dp" />
 
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Nama Cabang"
+            android:text="@string/Tv_NamaCabang"
             android:textStyle="normal"
             android:textSize="17dp" />
     </LinearLayout>

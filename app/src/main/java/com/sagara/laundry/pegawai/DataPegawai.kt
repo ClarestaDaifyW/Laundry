@@ -22,21 +22,33 @@ class DataPegawai : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("pegawai")
     lateinit var rvData_Pegawai: RecyclerView
-    lateinit var pegawaiList: ArrayList<ModelPegawai>
+    lateinit var listPegawai: ArrayList<ModelPegawai>
     lateinit var fabData_Pegawai_Tambah: FloatingActionButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_data_pegawai)
         init()
+
         val layoutManager = LinearLayoutManager(this)
-        layoutManager.reverseLayout = true
-        layoutManager.stackFromEnd = true
+            layoutManager.reverseLayout = true
+            layoutManager.stackFromEnd = true
         rvData_Pegawai.layoutManager=layoutManager
         rvData_Pegawai.setHasFixedSize(true)
-        pegawaiList = arrayListOf<ModelPegawai>()
-        tekan()
+        listPegawai = arrayListOf<ModelPegawai>()
         getData()
+        val fabData_Pegawai_Tambah : FloatingActionButton = findViewById(R.id.fabData_Pegawai_Tambah)
+        fabData_Pegawai_Tambah.setOnClickListener{
+            val intent = Intent (this, TambahPegawai::class.java)
+            intent.putExtra("judul", this.getString(R.string.tv1_TambahPegawai))
+            intent.putExtra("idPegawai","")
+            intent.putExtra("namaPegawai","" )
+            intent.putExtra("noHpPegawai","" )
+            intent.putExtra("alamatPegawai","" )
+            intent.putExtra("idCabangPegawai","" )
+            startActivity(intent)
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -53,28 +65,25 @@ class DataPegawai : AppCompatActivity() {
         val query = myRef.orderByChild("idPegawai").limitToLast(100)
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()){
-                    pegawaiList.clear()
-                    for(dataSnapshot in snapshot.children){
+                if (snapshot.exists()) {
+                    listPegawai.clear()
+                    for (dataSnapshot in snapshot.children) {
                         val pegawai = dataSnapshot.getValue(ModelPegawai::class.java)
-                        pegawaiList.add(pegawai!!)
+                        if (pegawai != null) {
+                            listPegawai.add(pegawai)
+                        }
                     }
-                    val adapter = adapter_data_pegawai(pegawaiList)
+
+                    val adapter = adapter_data_pegawai(this@DataPegawai, listPegawai)
                     rvData_Pegawai.adapter = adapter
                     adapter.notifyDataSetChanged()
                 }
-            }
 
+            }
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@DataPegawai, error.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@DataPegawai,error.message, Toast.LENGTH_SHORT).show()
             }
-        })
-    }
 
-    fun tekan() {
-        fabData_Pegawai_Tambah.setOnClickListener {
-            val intent = Intent(this, TambahPegawai::class.java)
-            startActivity(intent)
-        }
+        })
     }
 }

@@ -39,4 +39,11 @@
     <string name="validasi_Cabang_pegawai">Branch Name Cannot Be Blank</string>
     <string name="sukses_simpan_pegawai">Data Saved Successfully</string>
     <string name="gagal_simpan_pegawai">Data Failed to Save</string>
+    <string name="namaPegawai">staff name</string>
+    <string name="tvCARD_PELANGGAN_cabang">Branch</string>
+    <string name="tvCARD_PEGAWAI_cabang">Branch</string>
+    <string name="Tv_ID_Layanan">Service ID</string>
+    <string name="Tv_NamaLayanan">Service Name</string>
+    <string name="Tv_Harga">Price</string>
+    <string name="Tv_NamaCabang">Branch Name</string>
 </resources>

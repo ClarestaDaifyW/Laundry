@@ -26,6 +26,7 @@ class adapter_data_pelanggan(private val listPelanggan: ArrayList<ModelPelanggan
         holder.tvDaftar.text = item.tvCARD_PELANGGAN_daftar
         holder.tvAlamat.text = item.tvCARD_PELANGGAN_Almt
         holder.tvNoHP.text = item.tvCARD_PELANGGAN_NoHP
+        holder.tvCabang.text = item.tvCARD_PELANGGAN_Cabang
 
         holder.btnHubungi.setOnClickListener {
             // Handle button click (e.g., open phone dialer)
@@ -46,6 +47,7 @@ class adapter_data_pelanggan(private val listPelanggan: ArrayList<ModelPelanggan
         val tvNama: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_Nama)
         val tvAlamat: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_Almt)
         val tvNoHP: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_NoHP)
+        val tvCabang: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_cabang)
         val btnHubungi: Button = itemView.findViewById(R.id.btn_HUBUNGI)
         val btnLihat: Button = itemView.findViewById(R.id.btn_LIHAT)
 

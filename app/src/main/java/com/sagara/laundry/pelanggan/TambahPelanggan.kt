@@ -12,18 +12,21 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.database.FirebaseDatabase
 import com.sagara.laundry.R
 import com.sagara.laundry.modeldata.ModelPelanggan
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class TambahPelanggan : AppCompatActivity() {
 
     private val database = FirebaseDatabase.getInstance()
     private val myRef = database.getReference("pelanggan")
 
-    private lateinit var tvTambahPelanggan: TextView
-    private lateinit var etNamaLengkap: EditText
-    private lateinit var etAlamat: EditText
-    private lateinit var etNoHP: EditText
-    private lateinit var etNamaCabang: EditText
-    private lateinit var btnSimpan: Button
+    private lateinit var tv1_TambahPelanggan: TextView
+    private lateinit var ET1_NamaLengkap: EditText
+    private lateinit var ET2_Alamat: EditText
+    private lateinit var ET3_NoHP: EditText
+    private lateinit var ET4_NamaCabang: EditText
+    private lateinit var btn_Simpan: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +34,7 @@ class TambahPelanggan : AppCompatActivity() {
         setContentView(R.layout.activity_tambah_pelanggan)
         initViews()
 
-        btnSimpan.setOnClickListener {
+        btn_Simpan.setOnClickListener {
             cekValidasi()
         }
 
@@ -43,42 +46,42 @@ class TambahPelanggan : AppCompatActivity() {
     }
 
     private fun initViews() {
-        tvTambahPelanggan = findViewById(R.id.tv1_TambahPelanggan)
-        etNamaLengkap = findViewById(R.id.ET1_NamaLengkap)
-        etAlamat = findViewById(R.id.ET2_Alamat)
-        etNoHP = findViewById(R.id.ET3_NoHP)
-        etNamaCabang = findViewById(R.id.ET4_NamaCabang)
-        btnSimpan = findViewById(R.id.btn_Simpan)
+        tv1_TambahPelanggan = findViewById(R.id.tv1_TambahPelanggan)
+        ET1_NamaLengkap = findViewById(R.id.ET1_NamaLengkap)
+        ET2_Alamat = findViewById(R.id.ET2_Alamat)
+        ET3_NoHP = findViewById(R.id.ET3_NoHP)
+        ET4_NamaCabang = findViewById(R.id.ET4_NamaCabang)
+        btn_Simpan = findViewById(R.id.btn_Simpan)
     }
 
     private fun cekValidasi() {
-        val nama = etNamaLengkap.text.toString()
-        val alamat = etAlamat.text.toString()
-        val noHP = etNoHP.text.toString()
-        val cabang = etNamaCabang.text.toString()
+        val nama = ET1_NamaLengkap.text.toString()
+        val alamat = ET2_Alamat.text.toString()
+        val noHP = ET3_NoHP.text.toString()
+        val cabang = ET4_NamaCabang.text.toString()
 
         if (nama.isEmpty()) {
-            etNamaLengkap.error = getString(R.string.validasi_nama_pelanggan)
+            ET1_NamaLengkap.error = getString(R.string.validasi_nama_pelanggan)
             Toast.makeText(this, getString(R.string.validasi_nama_pelanggan), Toast.LENGTH_SHORT).show()
-            etNamaLengkap.requestFocus()
+            ET1_NamaLengkap.requestFocus()
             return
         }
         if (alamat.isEmpty()) {
-            etAlamat.error = getString(R.string.validasi_alamat_pelanggan)
+            ET2_Alamat.error = getString(R.string.validasi_alamat_pelanggan)
             Toast.makeText(this, getString(R.string.validasi_alamat_pelanggan), Toast.LENGTH_SHORT).show()
-            etAlamat.requestFocus()
+            ET2_Alamat.requestFocus()
             return
         }
         if (noHP.isEmpty()) {
-            etNoHP.error = getString(R.string.validasi_noHP_pelanggan)
+            ET3_NoHP.error = getString(R.string.validasi_noHP_pelanggan)
             Toast.makeText(this, getString(R.string.validasi_noHP_pelanggan), Toast.LENGTH_SHORT).show()
-            etNoHP.requestFocus()
+            ET3_NoHP.requestFocus()
             return
         }
         if (cabang.isEmpty()) {
-            etNamaCabang.error = getString(R.string.validasi_Cabang_pelanggan)
+            ET4_NamaCabang.error = getString(R.string.validasi_Cabang_pelanggan)
             Toast.makeText(this, getString(R.string.validasi_Cabang_pelanggan), Toast.LENGTH_SHORT).show()
-            etNamaCabang.requestFocus()
+            ET4_NamaCabang.requestFocus()
             return
         }
         simpan()
@@ -87,12 +90,14 @@ class TambahPelanggan : AppCompatActivity() {
     private fun simpan() {
         val pelangganBaru = myRef.push()
         val pelangganId = pelangganBaru.key ?: ""
+        val currentTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
         val data = ModelPelanggan(
             pelangganId,
-            etNamaLengkap.text.toString(),
-            etAlamat.text.toString(),
-            etNoHP.text.toString(),
-            etNamaCabang.text.toString()
+            ET1_NamaLengkap.text.toString(),
+            ET2_Alamat.text.toString(),
+            ET3_NoHP.text.toString(),
+            ET4_NamaCabang.text.toString(),
+            currentTime
         )
         pelangganBaru.setValue(data)
             .addOnSuccessListener {
