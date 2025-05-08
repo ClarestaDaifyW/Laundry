@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/CvCard_Cabang"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
-    android:id="@+id/CardPegawai"
     app:cardCornerRadius="16dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:background="#CA8787">
 
         <TextView
-            android:id="@+id/tvCARD_PEGAWAI_ID"
+            android:id="@+id/TvCard_ID_Cabang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PEGAWAI_ID"
+            android:text="ID Cabang"
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="italic" />
@@ -31,54 +32,44 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/tvCARD_PEGAWAI_Nama"
+            android:id="@+id/TvCard_Nama_Cabang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PEGAWAI_Nama"
+            android:layout_marginTop="5dp"
+            android:text="Nama Cabang"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvCARD_PEGAWAI_Almt"
+            android:id="@+id/TvCard_Alamat_Cabang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PEGAWAI_Almt"
-            android:textSize="17dp"
-            android:textStyle="normal"/>
+            android:text="@string/tvCARD_PELANGGAN_Almt"
+            android:textStyle="normal"
+            android:textSize="17dp" />
 
         <TextView
-            android:id="@+id/tvCARD_PEGAWAI_NoHP"
+            android:id="@+id/TvCard_NoHP_Cabang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PEGAWAI_NoHP"
-            android:textSize="17dp"
-            android:textStyle="normal"/>
+            android:text="@string/tvCARD_PELANGGAN_NoHP"
+            android:textStyle="normal"
+            android:textSize="17dp" />
 
         <TextView
-            android:id="@+id/tvCARD_PEGAWAI_daftar"
+            android:id="@+id/TvCard_Layanan_Cabang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PEGAWAI_daftar"
+            android:text="Layanan yang tersedia"
             android:textSize="18dp"
-            android:textStyle="normal"/>
-
-        <TextView
-            android:id="@+id/tvCARD_PEGAWAI_cabang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PEGAWAI_cabang"
-            android:textSize="18dp"
-            android:textStyle="normal"/>
+            android:textStyle="normal" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,25 +80,28 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_HUBUNGI_pegawai"
+                android:id="@+id/btn_HUBUNGI"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_HUBUNGI_pegawai"
+                android:text="@string/btn_HUBUNGI"
                 android:textSize="18dp"
+                android:textStyle="normal"
                 android:backgroundTint="#CA8787"/>
 
             <Button
-                android:id="@+id/btn_LIHAT_pegawai"
+                android:id="@+id/btn_LIHAT"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:text="@string/btn_LIHAT_pegawai"
+                android:text="@string/btn_LIHAT"
                 android:textSize="18dp"
+                android:textStyle="normal"
                 android:backgroundTint="#CA8787"/>
 
 
         </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

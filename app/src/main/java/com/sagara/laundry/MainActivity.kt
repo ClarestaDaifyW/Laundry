@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.sagara.laundry.R
+import com.sagara.laundry.cabang.DataCabang
+import com.sagara.laundry.layanan.datalayanan
 import com.sagara.laundry.pegawai.DataPegawai
 import com.sagara.laundry.pelanggan.DataPelanggan
 import java.text.SimpleDateFormat
@@ -15,6 +17,8 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     lateinit var pelanggan : ImageView
     lateinit var pegawai : ImageView
+    lateinit var layanan : ImageView
+    lateinit var cabang : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         pelanggan = findViewById(R.id.IV_Pelanggan)
         pegawai = findViewById(R.id.imagepegawai)
+        layanan = findViewById(R.id.imagelayanan)
+        cabang = findViewById(R.id.imagecabang)
 
         pelanggan.setOnClickListener {
             val intent = Intent(this@MainActivity, DataPelanggan:: class.java)
@@ -30,6 +36,16 @@ class MainActivity : AppCompatActivity() {
 
         pegawai.setOnClickListener {
             val intent = Intent( this@MainActivity, DataPegawai:: class.java)
+            startActivity(intent)
+        }
+
+        layanan.setOnClickListener {
+            val intent = Intent( this@MainActivity, datalayanan::class.java)
+            startActivity(intent)
+        }
+
+        cabang.setOnClickListener {
+            val intent = Intent( this@MainActivity, DataCabang::class.java)
             startActivity(intent)
         }
 

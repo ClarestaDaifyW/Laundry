@@ -46,4 +46,9 @@
     <string name="Tv_NamaLayanan">Service Name</string>
     <string name="Tv_Harga">Price</string>
     <string name="Tv_NamaCabang">Branch Name</string>
+    <string name="validasi_Layanan_Nama">Name Cannot Be Blank</string>
+    <string name="validasi_Layanan_Harga">Price Cannot Be Empty</string>
+    <string name="validasi_Layanan_namacabang">Branch Name Cannot Be Blank</string>
+    <string name="sukses_simpan_layanan">Service Saved Successfully</string>
+    <string name="gagal_simpan_layanan">Service Failed to Save</string>
 </resources>

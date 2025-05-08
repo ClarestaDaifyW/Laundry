@@ -196,6 +196,7 @@
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:layout_marginTop="10dp"
+            android:id="@+id/imagelayanan"
             android:src="@drawable/laundryremove" />
     </androidx.cardview.widget.CardView>
 
@@ -264,6 +265,7 @@
             android:layout_marginStart="30dp"/>
 
         <ImageView
+            android:id="@+id/imagecabang"
             android:layout_width="wrap_content"
             android:layout_height="63dp"
             android:layout_marginTop="10dp"

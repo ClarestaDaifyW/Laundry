@@ -46,4 +46,9 @@
     <string name="Tv_NamaLayanan">Nama Layanan</string>
     <string name="Tv_Harga">Harga</string>
     <string name="Tv_NamaCabang">Nama Cabang</string>
+    <string name="validasi_Layanan_Nama">Nama Tidak Boleh Kosong</string>
+    <string name="validasi_Layanan_Harga">Harga Tidak Boleh Kosong</string>
+    <string name="validasi_Layanan_namacabang">Nama Cabang Tidak Boleh Kosong</string>
+    <string name="sukses_simpan_layanan">Layanan Berhasil Disimpan</string>
+    <string name="gagal_simpan_layanan">Layanan Gagal Disimpan</string>
 </resources>
