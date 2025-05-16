@@ -11,6 +11,7 @@ import com.sagara.laundry.cabang.DataCabang
 import com.sagara.laundry.layanan.datalayanan
 import com.sagara.laundry.pegawai.DataPegawai
 import com.sagara.laundry.pelanggan.DataPelanggan
+import com.sagara.laundry.transaksi.Transaksi
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var pegawai : ImageView
     lateinit var layanan : ImageView
     lateinit var cabang : ImageView
+    lateinit var transaksi : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         pegawai = findViewById(R.id.imagepegawai)
         layanan = findViewById(R.id.imagelayanan)
         cabang = findViewById(R.id.imagecabang)
+        transaksi = findViewById(R.id.imagetransaksi)
 
         pelanggan.setOnClickListener {
             val intent = Intent(this@MainActivity, DataPelanggan:: class.java)
@@ -47,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         cabang.setOnClickListener {
             val intent = Intent( this@MainActivity, DataCabang::class.java)
             startActivity(intent)
+        }
+
+        transaksi.setOnClickListener {
+            val intent = Intent( this@MainActivity, Transaksi::class.java)
+            startActivity(intent
+            )
         }
 
 
