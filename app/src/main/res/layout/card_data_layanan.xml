@@ -16,7 +16,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:background="#577BC1">
+            android:background="#CA8787">
 
             <TextView
                 android:id="@+id/TvCard_ID_Layanan"
