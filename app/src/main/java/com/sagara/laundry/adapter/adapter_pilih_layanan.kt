@@ -9,34 +9,39 @@ import com.sagara.laundry.R
 import com.sagara.laundry.modeldata.ModelLayanan
 
 class adapter_pilih_layanan(
-    private val layananList: List<ModelLayanan>,
+    private var layananList: List<ModelLayanan>,
     private val onItemClick: (ModelLayanan) -> Unit
 ) : RecyclerView.Adapter<adapter_pilih_layanan.LayananViewHolder>() {
 
     inner class LayananViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvNama: TextView = itemView.findViewById(R.id.TvCard_NamaP_Layanan)
-        val tvHarga: TextView = itemView.findViewById(R.id.TvCard_AlamatP_Layanan)
+        private val tvIdUrut: TextView = itemView.findViewById(R.id.TvCard_IdUrut)
+        private val tvNama: TextView = itemView.findViewById(R.id.TvCard_NamaP_Layanan)
+        private val tvHarga: TextView = itemView.findViewById(R.id.TvCard_Harga_PL)
 
-        init {
-            itemView.setOnClickListener {
-                val posisi = adapterPosition
-                if (posisi != RecyclerView.NO_POSITION) {
-                    onItemClick(layananList[posisi])
-                }
-            }
+        fun bind(layanan: ModelLayanan, urutan: Int) {
+            tvIdUrut.text = "[$urutan]"
+            tvNama.text = layanan.tvCard_NamaLayanan ?: "-"
+            tvHarga.text = "Harga: Rp${layanan.tvCard_Harga ?: "0"}"
+
+            itemView.setOnClickListener { onItemClick(layanan) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LayananViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_pilih_layanan, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.card_pilih_layanan, parent, false)
         return LayananViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: LayananViewHolder, position: Int) {
-        val item = layananList[position]
-        holder.tvNama.text = item.tvCard_NamaLayanan
-        holder.tvHarga.text = "Harga: Rp${item.tvCard_Harga}"
+        val urutan = itemCount - position // untuk urutan menurun (5, 4, 3,...)
+        holder.bind(layananList[position], urutan)
     }
 
     override fun getItemCount(): Int = layananList.size
+
+    fun updateList(newList: List<ModelLayanan>) {
+        layananList = newList
+        notifyDataSetChanged()
+    }
 }

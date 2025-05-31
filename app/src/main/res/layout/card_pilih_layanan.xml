@@ -1,36 +1,36 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Cv_PL"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/Cv_PL"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
-    app:cardCornerRadius="16dp">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
 
-    <!-- Wrapper layout untuk membungkus dua layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Bagian Header -->
+        <!-- Header dengan background warna -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="39dp"
             android:background="#CA8787">
 
             <TextView
-                android:id="@+id/TvCard_ID_PL"
+                android:id="@+id/TvCard_IdUrut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="8dp"
-                android:text="ID_P_Layanan"
-                android:textColor="@color/white"
-                android:textSize="18sp"
+                android:layout_centerVertical="true"
+                android:text="ID"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
                 android:textStyle="italic" />
         </RelativeLayout>
 
-        <!-- Bagian Isi -->
+        <!-- Isi konten -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,24 +47,14 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/TvCard_AlamatP_Layanan"
+                android:id="@+id/TvCard_Harga_PL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Alamat :"
-                android:textStyle="normal"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/TvCard_NoHP_PP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="No HP :"
-                android:textStyle="normal"
-                android:textSize="17sp" />
+                android:text="Harga :"
+                android:textSize="17sp"
+                android:textStyle="normal" />
         </LinearLayout>
 
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>
