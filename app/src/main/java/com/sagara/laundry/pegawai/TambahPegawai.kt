@@ -5,7 +5,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -13,10 +12,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.sagara.laundry.R
 import com.sagara.laundry.modeldata.ModelPegawai
 import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import java.util.*
 
 class TambahPegawai : AppCompatActivity() {
+
     private val database = FirebaseDatabase.getInstance()
     private val myRef = database.getReference("pegawai")
 
@@ -32,7 +31,6 @@ class TambahPegawai : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_tambah_pegawai)
 
         initViews()
@@ -94,6 +92,7 @@ class TambahPegawai : AppCompatActivity() {
         if (alamat.isEmpty()) {
             ET2_Alamat.error = getString(R.string.validasi_alamat_pegawai)
             ET2_Alamat.requestFocus()
+            return
         }
         if (noHP.isEmpty()) {
             ET3_NoHP.error = getString(R.string.validasi_noHP_pegawai)
@@ -114,26 +113,33 @@ class TambahPegawai : AppCompatActivity() {
     }
 
     private fun simpan() {
-        val pegawaiBaru = myRef.push()
-        val pegawaiId = pegawaiBaru.key ?: ""
-        val currentTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
-        val data = ModelPegawai(
-            pegawaiId,
-            ET1_NamaLengkap_Pegawai.text.toString(),
-            ET2_Alamat.text.toString(),
-            ET3_NoHP.text.toString(),
-            ET4_NamaCabang.text.toString(),
-            currentTime
-        )
-        pegawaiBaru.setValue(data)
-            .addOnSuccessListener {
-                Toast.makeText(this, getString(R.string.sukses_simpan_pegawai), Toast.LENGTH_SHORT).show()
-                finish()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, getString(R.string.gagal_simpan_pegawai), Toast.LENGTH_SHORT).show()
-            }
+        myRef.get().addOnSuccessListener { snapshot ->
+            val count = snapshot.childrenCount.toInt() + 1
+            val pegawaiId = "PGW" + String.format("%03d", count)
+            val waktuDaftar = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
+
+            val data = ModelPegawai(
+                idPegawai = pegawaiId,
+                namaPegawai = ET1_NamaLengkap_Pegawai.text.toString(),
+                terdaftar = waktuDaftar,
+                alamatPegawai = ET2_Alamat.text.toString(),
+                noHpPegawai = ET3_NoHP.text.toString(),
+                idCabangPegawai = ET4_NamaCabang.text.toString()
+            )
+
+            myRef.child(pegawaiId).setValue(data)
+                .addOnSuccessListener {
+                    Toast.makeText(this, getString(R.string.sukses_simpan_pegawai), Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, getString(R.string.gagal_simpan_pegawai), Toast.LENGTH_SHORT).show()
+                }
+        }.addOnFailureListener {
+            Toast.makeText(this, "Gagal mengambil jumlah pegawai", Toast.LENGTH_SHORT).show()
+        }
     }
+
 
     private fun update() {
         val pegawaiRef = database.getReference("pegawai").child(idPegawai)

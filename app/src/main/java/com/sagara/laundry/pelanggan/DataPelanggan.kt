@@ -33,7 +33,6 @@ class DataPelanggan : AppCompatActivity() {
 
         initViews()
 
-        // Set layout manager untuk RecyclerView
         val layoutManager = LinearLayoutManager(this).apply {
             reverseLayout = true
             stackFromEnd = true
@@ -41,16 +40,13 @@ class DataPelanggan : AppCompatActivity() {
         rvDataPelanggan.layoutManager = layoutManager
         rvDataPelanggan.setHasFixedSize(true)
 
-        // Tombol FloatingActionButton untuk menambah data pelanggan
         fabTambahPelanggan.setOnClickListener {
             val intent = Intent(this@DataPelanggan, TambahPelanggan::class.java)
             startActivity(intent)
         }
 
-        // Memanggil fungsi untuk mengambil data dari Firebase
         getData()
 
-        // Mengatur padding untuk system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -74,7 +70,7 @@ class DataPelanggan : AppCompatActivity() {
                         val pelanggan = dataSnapshot.getValue(ModelPelanggan::class.java)
                         pelanggan?.let { pelangganList.add(it) }
                     }
-                    val adapter = adapter_data_pelanggan(pelangganList)
+                    val adapter = adapter_data_pelanggan(this@DataPelanggan, pelangganList)
                     rvDataPelanggan.adapter = adapter
                     adapter.notifyDataSetChanged()
                 }

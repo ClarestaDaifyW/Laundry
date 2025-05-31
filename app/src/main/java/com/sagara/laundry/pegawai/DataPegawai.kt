@@ -43,8 +43,8 @@ class DataPegawai : AppCompatActivity() {
             intent.putExtra("judul", this.getString(R.string.tv1_TambahPegawai))
             intent.putExtra("idPegawai","")
             intent.putExtra("namaPegawai","" )
-            intent.putExtra("noHpPegawai","" )
             intent.putExtra("alamatPegawai","" )
+            intent.putExtra("noHpPegawai","" )
             intent.putExtra("idCabangPegawai","" )
             startActivity(intent)
         }

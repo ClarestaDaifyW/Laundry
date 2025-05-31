@@ -5,7 +5,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -13,8 +12,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.sagara.laundry.R
 import com.sagara.laundry.modeldata.ModelPelanggan
 import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import java.util.*
 
 class TambahPelanggan : AppCompatActivity() {
 
@@ -28,11 +26,15 @@ class TambahPelanggan : AppCompatActivity() {
     private lateinit var ET4_NamaCabang: EditText
     private lateinit var btn_Simpan: Button
 
+    private var idPelanggan: String = ""
+    private var isEditMode = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_tambah_pelanggan)
+
         initViews()
+        getData()
 
         btn_Simpan.setOnClickListener {
             cekValidasi()
@@ -54,6 +56,28 @@ class TambahPelanggan : AppCompatActivity() {
         btn_Simpan = findViewById(R.id.btn_Simpan)
     }
 
+    private fun getData() {
+        idPelanggan = intent.getStringExtra("idPelanggan") ?: ""
+        val nama = intent.getStringExtra("namaPelanggan")
+        val alamat = intent.getStringExtra("alamatPelanggan")
+        val hp = intent.getStringExtra("noHpPelanggan")
+        val cabang = intent.getStringExtra("cabangPelanggan")
+
+        if (idPelanggan.isNotEmpty()) {
+            isEditMode = true
+            tv1_TambahPelanggan.text = "Edit Pelanggan"
+            ET1_NamaLengkap.setText(nama)
+            ET2_Alamat.setText(alamat)
+            ET3_NoHP.setText(hp)
+            ET4_NamaCabang.setText(cabang)
+            btn_Simpan.text = "Sunting"
+        } else {
+            isEditMode = false
+            tv1_TambahPelanggan.text = getString(R.string.tv1_TambahPelanggan)
+            btn_Simpan.text = "Simpan"
+        }
+    }
+
     private fun cekValidasi() {
         val nama = ET1_NamaLengkap.text.toString()
         val alamat = ET2_Alamat.text.toString()
@@ -62,50 +86,77 @@ class TambahPelanggan : AppCompatActivity() {
 
         if (nama.isEmpty()) {
             ET1_NamaLengkap.error = getString(R.string.validasi_nama_pelanggan)
-            Toast.makeText(this, getString(R.string.validasi_nama_pelanggan), Toast.LENGTH_SHORT).show()
             ET1_NamaLengkap.requestFocus()
             return
         }
         if (alamat.isEmpty()) {
             ET2_Alamat.error = getString(R.string.validasi_alamat_pelanggan)
-            Toast.makeText(this, getString(R.string.validasi_alamat_pelanggan), Toast.LENGTH_SHORT).show()
             ET2_Alamat.requestFocus()
             return
         }
         if (noHP.isEmpty()) {
             ET3_NoHP.error = getString(R.string.validasi_noHP_pelanggan)
-            Toast.makeText(this, getString(R.string.validasi_noHP_pelanggan), Toast.LENGTH_SHORT).show()
             ET3_NoHP.requestFocus()
             return
         }
         if (cabang.isEmpty()) {
             ET4_NamaCabang.error = getString(R.string.validasi_Cabang_pelanggan)
-            Toast.makeText(this, getString(R.string.validasi_Cabang_pelanggan), Toast.LENGTH_SHORT).show()
             ET4_NamaCabang.requestFocus()
             return
         }
-        simpan()
+
+        if (isEditMode) {
+            update()
+        } else {
+            simpan()
+        }
     }
 
     private fun simpan() {
-        val pelangganBaru = myRef.push()
-        val pelangganId = pelangganBaru.key ?: ""
-        val currentTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
-        val data = ModelPelanggan(
-            pelangganId,
-            ET1_NamaLengkap.text.toString(),
-            ET2_Alamat.text.toString(),
-            ET3_NoHP.text.toString(),
-            ET4_NamaCabang.text.toString(),
-            currentTime
+        myRef.get().addOnSuccessListener { snapshot ->
+            val count = snapshot.childrenCount.toInt() + 1
+            val pelangganId = "PLG" + String.format("%06d", count)
+            val waktuDaftar = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
+
+            val data = ModelPelanggan(
+                tvCARD_PELANGGAN_ID = pelangganId,
+                tvCARD_PELANGGAN_Nama = ET1_NamaLengkap.text.toString(),
+                tvCARD_PELANGGAN_Almt = ET2_Alamat.text.toString(),
+                tvCARD_PELANGGAN_NoHP = ET3_NoHP.text.toString(),
+                tvCARD_PELANGGAN_Cabang = ET4_NamaCabang.text.toString(),
+                tvCARD_PELANGGAN_daftar = waktuDaftar
+            )
+
+            myRef.child(pelangganId).setValue(data)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Data pelanggan berhasil disimpan", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Gagal menyimpan data", Toast.LENGTH_SHORT).show()
+                }
+
+        }.addOnFailureListener {
+            Toast.makeText(this, "Gagal mengambil jumlah pelanggan", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun update() {
+        val pelangganRef = database.getReference("pelanggan").child(idPelanggan)
+        val data = mapOf(
+            "tvCARD_PELANGGAN_Nama" to ET1_NamaLengkap.text.toString(),
+            "tvCARD_PELANGGAN_Almt" to ET2_Alamat.text.toString(),
+            "tvCARD_PELANGGAN_NoHP" to ET3_NoHP.text.toString(),
+            "tvCARD_PELANGGAN_Cabang" to ET4_NamaCabang.text.toString()
         )
-        pelangganBaru.setValue(data)
+
+        pelangganRef.updateChildren(data)
             .addOnSuccessListener {
-                Toast.makeText(this, getString(R.string.sukses_simpan_pelanggan), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Data pelanggan berhasil diperbarui", Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener {
-                Toast.makeText(this, getString(R.string.gagal_simpan_pelanggan), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Gagal memperbarui data", Toast.LENGTH_SHORT).show()
             }
     }
 }

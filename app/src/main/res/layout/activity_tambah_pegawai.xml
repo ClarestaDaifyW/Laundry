@@ -84,6 +84,7 @@
         android:layout_marginEnd="25dp"
         android:background="@drawable/radius"
         android:hint="@string/ET3_NoHP"
+        android:inputType="phone"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
