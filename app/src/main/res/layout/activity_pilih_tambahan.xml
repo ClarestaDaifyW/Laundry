@@ -9,10 +9,12 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_viewPT"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:textColor="@color/text"
         android:layout_marginTop="10dp"
+        android:background="@drawable/radius"
         android:queryHint="Cari Data Pelanggan"
         app:layout_constraintBottom_toTopOf="@+id/rv_data_PT"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,15 +23,16 @@
 
     <TextView
         android:id="@+id/TvKosongPT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Data pelanggan kosong"
-        android:visibility="gone"
+        android:layout_width="498dp"
+        android:layout_height="679dp"
         android:padding="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Data pelanggan kosong"
+        android:textColor="@color/text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_data_PT"

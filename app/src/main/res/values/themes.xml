@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Laundry" parent="Base.Theme.Laundry" />
+    <color name="strokeColor">#000000</color> <!-- Hitam untuk light mode -->
+    <color name="text">#000000</color>
+    <color name="text2">#FFFFFF</color>
+    <color name="button">#CA8787</color>
+    <color name="textbutton">#FFFFFF</color>
+    <color name="ungu">#52357B</color>
 </resources>

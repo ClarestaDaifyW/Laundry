@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sagara.laundry.R
 import com.sagara.laundry.modeldata.ModelLayanan
+import java.text.NumberFormat
+import java.util.*
 
 class adapter_pilih_layanan(
     private var layananList: List<ModelLayanan>,
@@ -21,7 +23,17 @@ class adapter_pilih_layanan(
         fun bind(layanan: ModelLayanan, urutan: Int) {
             tvIdUrut.text = "[$urutan]"
             tvNama.text = layanan.tvCard_NamaLayanan ?: "-"
-            tvHarga.text = "Harga: Rp${layanan.tvCard_Harga ?: "0"}"
+
+            // Format harga ke Rupiah (contoh: Rp 15.000)
+            val harga = layanan.tvCard_Harga
+                ?.replace(".", "")
+                ?.replace(",", "")
+                ?.trim()
+                ?.toIntOrNull() ?: 0
+
+            val formatter = NumberFormat.getNumberInstance(Locale("in", "ID"))
+            val formattedHarga = "Rp ${formatter.format(harga)}"
+            tvHarga.text = "Harga: $formattedHarga"
 
             itemView.setOnClickListener { onItemClick(layanan) }
         }

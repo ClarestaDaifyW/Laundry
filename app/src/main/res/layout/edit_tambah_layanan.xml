@@ -5,12 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layanan.TambahLayanan">
+    tools:context=".layanan.EditLayanan">
+
     <TextView
         android:id="@+id/tv1_TambahLayanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tambah Layanan"
+        android:text="Edit Layanan"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
@@ -91,17 +92,16 @@
         app:layout_constraintTop_toBottomOf="@id/tv5_NamaCabang_Layanan" />
 
     <Button
-        android:id="@+id/btn_Simpan_Layanan"
+        android:id="@+id/btn_Edit_Layanan"
         android:layout_width="295dp"
         android:layout_height="61dp"
-        android:text="@string/btn_Simpan"
+        android:text="Edit"
         android:textSize="18dp"
         android:layout_marginTop="35dp"
         android:backgroundTint="#CA8787"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ET4_NamaCabang_Layanan"/>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

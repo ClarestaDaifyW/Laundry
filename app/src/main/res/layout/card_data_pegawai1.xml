@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="41dp"
-        android:background="#CA8787">
+        android:background="@color/button">
 
         <TextView
             android:id="@+id/tvCARD_PEGAWAI_ID"
@@ -18,7 +18,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PEGAWAI_ID"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="italic" />
     </RelativeLayout>
@@ -37,6 +37,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PEGAWAI_Nama"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -48,6 +49,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PEGAWAI_Almt"
             android:textSize="17dp"
+            android:textColor="@color/text"
             android:textStyle="normal"/>
 
         <TextView
@@ -57,6 +59,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PEGAWAI_NoHP"
+            android:textColor="@color/text"
             android:textSize="17dp"
             android:textStyle="normal"/>
 
@@ -67,6 +70,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PEGAWAI_cabang"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="normal"/>
 
@@ -77,6 +81,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PEGAWAI_daftar"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="normal"/>
 
@@ -95,7 +100,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_HUBUNGI_pegawai"
                 android:textSize="18dp"
-                android:backgroundTint="#CA8787"/>
+                android:textColor="@color/text"
+                android:backgroundTint="@color/button"/>
 
             <Button
                 android:id="@+id/btn_LIHAT_pegawai"
@@ -103,8 +109,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:text="@string/btn_LIHAT_pegawai"
+                android:textColor="@color/text"
                 android:textSize="18dp"
-                android:backgroundTint="#CA8787"/>
+                android:backgroundTint="@color/button"/>
 
 
         </LinearLayout>

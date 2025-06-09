@@ -15,6 +15,27 @@
         android:theme="@style/Theme.Laundry"
         tools:targetApi="31">
         <activity
+            android:name=".layanan.EditLayanan"
+            android:exported="false" />
+        <activity
+            android:name=".transaksi.activity_bayar_nanti"
+            android:exported="false" />
+        <activity
+            android:name=".transaksi.activity_pilih_tambahan"
+            android:exported="false" />
+        <activity
+            android:name=".transaksi.MetodePembayaran"
+            android:exported="false" />
+        <activity
+            android:name=".transaksi.KonfirmasiData"
+            android:exported="false" />
+        <activity
+            android:name=".pelanggan.EditPelanggan"
+            android:exported="false" />
+        <activity
+            android:name=".pegawai.EditPegawai"
+            android:exported="false" />
+        <activity
             android:name=".transaksi.activity_pilih_layanan"
             android:exported="false" />
         <activity

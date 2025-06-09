@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="41dp"
-        android:background="#CA8787">
+        android:background="@color/button">
 
         <TextView
             android:id="@+id/TvCard_ID_Tambahan"
@@ -19,7 +19,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
             android:text="ID Tambahan"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="italic" />
     </RelativeLayout>
@@ -36,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:textColor="@color/text"
             android:text="Nama Tambahan :"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -47,6 +48,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
             android:text="Harga :"
+            android:textColor="@color/text"
             android:textStyle="normal"
             android:textSize="17dp"/>
 
@@ -56,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
+            android:textColor="@color/text"
             android:text="Cabang :"
             android:textStyle="normal"
             android:textSize="17dp"/>

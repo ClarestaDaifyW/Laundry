@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -23,6 +22,7 @@ class Transaksi : AppCompatActivity() {
     private lateinit var btnPilihPelanggan: Button
     private lateinit var btnPilihLayanan: Button
     private lateinit var btnTambahan: Button
+    private lateinit var btnProses: Button
 
     private lateinit var tvIsi1: TextView
     private lateinit var tvIsi2: TextView
@@ -33,6 +33,11 @@ class Transaksi : AppCompatActivity() {
     private lateinit var adapterTambahan: adapter_tambah_pilihan
     private val listTambahan = mutableListOf<ModelTambah>()
 
+    private var namaPelanggan: String = "-"
+    private var noHpPelanggan: String = "-"
+    private var namaLayanan: String = "-"
+    private var hargaLayanan: String = "-"
+
     companion object {
         const val REQUEST_PILIH_PELANGGAN = 1
         const val REQUEST_PILIH_LAYANAN = 2
@@ -41,45 +46,60 @@ class Transaksi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_transaksi)
 
-        // Inisialisasi tombol dan teks
         btnPilihPelanggan = findViewById(R.id.btnPilihPelanggan)
         btnPilihLayanan = findViewById(R.id.btnPilihLayanan)
         btnTambahan = findViewById(R.id.btnTambahan)
+        btnProses = findViewById(R.id.btnProses)
 
         tvIsi1 = findViewById(R.id.TvIsi1)
         tvIsi2 = findViewById(R.id.TvIsi2)
         tvIsi3 = findViewById(R.id.TvIsi3)
         tvIsi4 = findViewById(R.id.TvIsi4)
 
-        // Inisialisasi RecyclerView
         rvTambahan = findViewById(R.id.rvItem_Tambahan)
         rvTambahan.layoutManager = LinearLayoutManager(this)
-
-        adapterTambahan = adapter_tambah_pilihan(listTambahan) { item ->
-            Toast.makeText(this, "Dihapus: ${item.nama_tambahan}", Toast.LENGTH_SHORT).show()
+        adapterTambahan = adapter_tambah_pilihan(listTambahan) {
+            listTambahan.remove(it)
+            adapterTambahan.notifyDataSetChanged()
         }
         rvTambahan.adapter = adapterTambahan
 
-        // Tombol pilih
         btnPilihPelanggan.setOnClickListener {
-            val intent = Intent(this, activity_pilih_pelanggan::class.java)
-            startActivityForResult(intent, REQUEST_PILIH_PELANGGAN)
+            startActivityForResult(Intent(this, activity_pilih_pelanggan::class.java), REQUEST_PILIH_PELANGGAN)
         }
 
         btnPilihLayanan.setOnClickListener {
-            val intent = Intent(this, activity_pilih_layanan::class.java)
-            startActivityForResult(intent, REQUEST_PILIH_LAYANAN)
+            startActivityForResult(Intent(this, activity_pilih_layanan::class.java), REQUEST_PILIH_LAYANAN)
         }
 
         btnTambahan.setOnClickListener {
-            val intent = Intent(this, activity_pilih_tambahan::class.java)
-            startActivityForResult(intent, REQUEST_PILIH_TAMBAHAN)
+            startActivityForResult(Intent(this, activity_pilih_tambahan::class.java), REQUEST_PILIH_TAMBAHAN)
         }
 
-        // Padding sistem
+        btnProses.setOnClickListener {
+            when {
+                namaPelanggan == "-" || noHpPelanggan == "-" -> {
+                    Toast.makeText(this, "Silakan pilih pelanggan terlebih dahulu.", Toast.LENGTH_SHORT).show()
+                }
+                namaLayanan == "-" || hargaLayanan == "-" -> {
+                    Toast.makeText(this, "Silakan pilih layanan terlebih dahulu.", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    val intent = Intent(this, KonfirmasiData::class.java).apply {
+                        putExtra("NAMA_PELANGGAN", namaPelanggan)
+                        putExtra("NOHP", noHpPelanggan)
+                        putExtra("NAMA_LAYANAN", namaLayanan)
+                        putExtra("HARGA_LAYANAN", hargaLayanan)
+                        putParcelableArrayListExtra("TAMBAHAN_LIST", ArrayList(listTambahan))
+                    }
+                    startActivity(intent)
+                }
+            }
+        }
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -92,34 +112,30 @@ class Transaksi : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && data != null) {
             when (requestCode) {
                 REQUEST_PILIH_PELANGGAN -> {
-                    val nama = data.getStringExtra("NAMA") ?: "-"
-                    val noHp = data.getStringExtra("NOHP") ?: "-"
-                    tvIsi1.text = "Nama Pelanggan: $nama"
-                    tvIsi2.text = "No HP: $noHp"
+                    namaPelanggan = data.getStringExtra("NAMA") ?: "-"
+                    noHpPelanggan = data.getStringExtra("NOHP") ?: "-"
+                    tvIsi1.text = "Nama Pelanggan: $namaPelanggan"
+                    tvIsi2.text = "No HP: $noHpPelanggan"
                 }
-
                 REQUEST_PILIH_LAYANAN -> {
-                    val namaLayanan = data.getStringExtra("NAMA_LAYANAN") ?: "-"
-                    val harga = data.getStringExtra("HARGA") ?: "-"
-                    val hargaFormatted = formatHarga(harga)
+                    namaLayanan = data.getStringExtra("NAMA_LAYANAN") ?: "-"
+                    hargaLayanan = data.getStringExtra("HARGA") ?: "-"
                     tvIsi3.text = "Nama Layanan: $namaLayanan"
-                    tvIsi4.text = "Harga: $hargaFormatted"
+                    tvIsi4.text = "Harga: ${formatHarga(hargaLayanan)}"
                 }
-
                 REQUEST_PILIH_TAMBAHAN -> {
                     val id = data.getStringExtra("idTambahan") ?: "-"
                     val nama = data.getStringExtra("nama") ?: "-"
                     val harga = data.getStringExtra("harga") ?: "-"
 
-                    // Cek duplikasi berdasarkan ID
-                    val sudahAda = listTambahan.any { it.id_tambahan == id }
-                    if (sudahAda) {
+                    if (listTambahan.any { it.id_tambahan == id }) {
                         Toast.makeText(this, "Layanan tambahan sudah dipilih", Toast.LENGTH_SHORT).show()
                         return
                     }
 
                     val tambahan = ModelTambah(id, nama, harga, "")
-                    adapterTambahan.addItem(tambahan)
+                    listTambahan.add(tambahan)
+                    adapterTambahan.notifyDataSetChanged()
                 }
             }
         }
@@ -127,11 +143,9 @@ class Transaksi : AppCompatActivity() {
 
     private fun formatHarga(harga: String): String {
         return try {
-            val angkaBersih = harga.replace(Regex("[^\\d]"), "")
-            val hargaInt = angkaBersih.toInt()
-            NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(hargaInt)
+            val angka = harga.replace(Regex("[^\\d]"), "").toInt()
+            NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(angka)
         } catch (e: Exception) {
-            e.printStackTrace()
             harga
         }
     }

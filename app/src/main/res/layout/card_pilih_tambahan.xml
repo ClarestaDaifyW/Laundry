@@ -9,15 +9,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp">
+        android:layout_height="wrap_content">
 
         <!-- Header ID -->
         <RelativeLayout
             android:id="@+id/HeaderID"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:background="#CA8787">
+            android:background="@color/button">
 
             <TextView
                 android:id="@+id/TvCard_ID_Tambahan"
@@ -26,7 +25,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="8dp"
                 android:text="ID Tambahan"
-                android:textColor="@color/white"
+                android:textColor="@color/text"
                 android:textSize="18dp"
                 android:textStyle="italic" />
         </RelativeLayout>
@@ -35,9 +34,9 @@
         <LinearLayout
             android:id="@+id/LL1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_below="@+id/HeaderID"
-            android:layout_marginTop="10dp"
+            android:background="#E8BCB9"
             android:orientation="vertical">
 
             <TextView
@@ -45,7 +44,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
                 android:text="Nama Tambahan"
+                android:textColor="@color/text2"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
@@ -53,9 +54,10 @@
                 android:id="@+id/TvCard_Harga_Tambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
                 android:text="Harga :"
+                android:textColor="@color/text2"
                 android:textSize="17dp" />
         </LinearLayout>
 
@@ -69,6 +71,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:clickable="true"
+            android:textColor="@color/text"
             android:contentDescription="Hapus"
             android:focusable="true"
             android:src="@drawable/tongsampah" />

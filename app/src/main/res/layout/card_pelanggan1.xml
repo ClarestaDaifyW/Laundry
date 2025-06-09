@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="41dp"
-        android:background="#CA8787">
+        android:background="@color/button">
 
         <TextView
             android:id="@+id/tvCARD_PELANGGAN_ID"
@@ -19,7 +19,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_ID"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="italic" />
     </RelativeLayout>
@@ -38,6 +38,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_Nama"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -49,6 +50,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_Almt"
             android:textStyle="normal"
+            android:textColor="@color/text"
             android:textSize="17dp" />
 
         <TextView
@@ -58,18 +60,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_NoHP"
+            android:textColor="@color/text"
             android:textStyle="normal"
             android:textSize="17dp" />
 
-        <TextView
-            android:id="@+id/tvCARD_PELANGGAN_daftar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/tvCARD_PELANGGAN_daftar"
-            android:textSize="18dp"
-            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/tvCARD_PELANGGAN_cabang"
@@ -78,6 +72,18 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_cabang"
+            android:textColor="@color/text"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tvCARD_PELANGGAN_daftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/tvCARD_PELANGGAN_daftar"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="normal" />
 
@@ -96,17 +102,19 @@
                 android:text="@string/btn_HUBUNGI"
                 android:textSize="18dp"
                 android:textStyle="normal"
-                android:backgroundTint="#CA8787"/>
+                android:backgroundTint="@color/button"
+                android:textColor="@color/text"/>
 
             <Button
                 android:id="@+id/btn_LIHAT"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
+                android:backgroundTint="@color/button"
+                android:textColor="@color/text"
                 android:text="@string/btn_LIHAT"
                 android:textSize="18dp"
-                android:textStyle="normal"
-                android:backgroundTint="#CA8787"/>
+                android:textStyle="normal"/>
 
 
         </LinearLayout>

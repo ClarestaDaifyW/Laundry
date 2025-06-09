@@ -11,6 +11,8 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_viewPL"
         android:layout_width="0dp"
+        android:textColor="@color/text"
+        android:background="@drawable/radius"
         android:layout_height="wrap_content"
         android:queryHint="Cari Data Pelanggan"
         app:layout_constraintTop_toTopOf="parent"

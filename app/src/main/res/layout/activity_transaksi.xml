@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Data Pelanggan"
+                android:textColor="@color/text"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
@@ -38,6 +39,8 @@
                 android:layout_height="wrap_content"
                 android:text="Nama Pelanggan:"
                 android:textSize="17dp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp" />
 
@@ -46,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="No HP:"
+                android:textColor="@color/text"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp" />
@@ -55,6 +59,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pilih Pelanggan"
+                android:backgroundTint="@color/button"
+                android:textColor="@color/text"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp" />
@@ -64,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Layanan Utama"
+                android:textColor="@color/text"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"
@@ -74,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama Layanan:"
+                android:textColor="@color/text"
                 android:textSize="17dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp" />
@@ -83,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Harga:"
+                android:textColor="@color/text"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp" />
@@ -92,6 +101,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pilih Layanan"
+                android:backgroundTint="@color/button"
+                android:textColor="@color/text"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp" />
@@ -102,6 +113,7 @@
                 android:layout_height="wrap_content"
                 android:text="Layanan Tambahan"
                 android:textSize="24dp"
+                android:textColor="@color/text"
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp" />
@@ -158,6 +170,8 @@
                 android:layout_height="wrap_content"
                 android:text="Tambahan"
                 android:textSize="16dp"
+                android:textColor="@color/text"
+                android:backgroundTint="@color/button"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="10dp" />
 
@@ -166,6 +180,8 @@
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:text="Proses"
+                android:textColor="@color/text"
+                android:backgroundTint="@color/button"
                 android:textSize="16dp"
                 android:layout_marginEnd="25dp" />
         </LinearLayout>

@@ -16,7 +16,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:background="#CA8787">
+            android:background="@color/button">
 
             <TextView
                 android:id="@+id/TvCard_IdUrut"
@@ -25,7 +25,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_centerVertical="true"
                 android:text="ID"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text"
                 android:textSize="16sp"
                 android:textStyle="italic" />
         </RelativeLayout>
@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="Nama Layanan"
+                android:textColor="@color/text"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -52,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Harga :"
+                android:textColor="@color/text"
                 android:textSize="17sp"
                 android:textStyle="normal" />
         </LinearLayout>

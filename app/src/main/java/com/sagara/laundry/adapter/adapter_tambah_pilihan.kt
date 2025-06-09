@@ -36,7 +36,7 @@ class adapter_tambah_pilihan(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
 
-        holder.tvId.text = "ID: ${item.id_tambahan ?: "-"}"
+        holder.tvId.text = "[${position + 1}]"
         holder.tvNama.text = item.nama_tambahan ?: "-"
         val harga = item.harga_tambahan?.toIntOrNull() ?: 0
         val formatter = NumberFormat.getCurrencyInstance(Locale("in", "ID"))

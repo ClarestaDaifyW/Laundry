@@ -16,6 +16,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:textColor="@color/text"
+        android:background="@drawable/radius"
         android:layout_marginTop="10dp"
         android:queryHint="Cari Data Pelanggan"
         app:layout_constraintBottom_toTopOf="@+id/rv_data_PP"
@@ -25,13 +27,15 @@
 
     <TextView
         android:id="@+id/TvKosongPP"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Data pelanggan kosong"
         android:visibility="gone"
+        android:textColor="@color/text"
         android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 

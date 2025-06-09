@@ -1,15 +1,15 @@
 package com.sagara.laundry.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.DatabaseReference
 import com.sagara.laundry.R
+import com.sagara.laundry.layanan.EditLayanan
 import com.sagara.laundry.modeldata.ModelLayanan
-import com.sagara.laundry.adapter.adapter_data_Layanan
 
 class adapter_data_Layanan(
     private val listlayanan: ArrayList<ModelLayanan>
@@ -26,22 +26,26 @@ class adapter_data_Layanan(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = listlayanan[position]
-        holder.tvID.text = item.tvCard_ID_Layanan
+        holder.tvID.text = "[${position + 1}]"
         holder.tvNama.text = item.tvCard_NamaLayanan
         holder.tvHarga.text = item.tvCard_Harga
         holder.tvcabang.text = item.tvCard_NamaCabang_Layanan
 
         holder.cardlayanan.setOnClickListener {
-            // TODO: Tambahkan fungsi untuk lihat detail pegawai di sini
+            val context = holder.itemView.context
+            val intent = Intent(context, EditLayanan::class.java)
+
+            // Gunakan key yang konsisten
+            intent.putExtra("id", item.tvCard_ID_Layanan)
+            intent.putExtra("nama", item.tvCard_NamaLayanan)
+            intent.putExtra("harga", item.tvCard_Harga)
+            intent.putExtra("cabang", item.tvCard_NamaCabang_Layanan)
+
+            context.startActivity(intent)
         }
-
-
-
     }
 
-    override fun getItemCount(): Int {
-        return listlayanan.size
-    }
+    override fun getItemCount(): Int = listlayanan.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cardlayanan: CardView = itemView.findViewById(R.id.Cv_Layanan)
@@ -49,6 +53,5 @@ class adapter_data_Layanan(
         val tvNama: TextView = itemView.findViewById(R.id.TvCard_NamaLayanan)
         val tvHarga: TextView = itemView.findViewById(R.id.TvCard_Harga)
         val tvcabang: TextView = itemView.findViewById(R.id.TvCard_NamaCabang_Layanan)
-
     }
 }

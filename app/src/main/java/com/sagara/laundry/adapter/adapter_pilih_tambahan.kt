@@ -48,7 +48,7 @@ class adapter_pilih_tambahan(
             ?.toIntOrNull() ?: 0
         val hargaFormatted = "Rp ${formatter.format(hargaNumber)}"
 
-        holder.tvID.text = "ID: ${item.id_tambahan ?: "-"}"
+        holder.tvID.text = "[${position + 1}]"
         holder.tvNama.text = item.nama_tambahan ?: "-"
         holder.tvHarga.text = hargaFormatted
 
@@ -65,6 +65,7 @@ class adapter_pilih_tambahan(
             }
         }
     }
+
 
     override fun getItemCount(): Int = filteredList.size
 

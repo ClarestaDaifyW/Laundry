@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/text"
         android:text="Selamat Pagi, Claresta"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -26,6 +27,7 @@
         android:text="08 Januari 2025"
         android:textSize="17dp"
         android:layout_marginTop="30dp"
+        android:textColor="@color/text"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,6 +49,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:text="Estimasi"
+            android:textColor="@color/text"
             android:textSize="17dp"
             android:textStyle="bold" />
 
@@ -55,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="155dp"
             android:layout_marginTop="10dp"
+            android:textColor="@color/text"
             android:text="Rp. 40.000,-"
             android:textSize="17dp" />
 
@@ -68,6 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="155dp"
+            android:textColor="@color/text"
             android:layout_marginTop="70dp"
             android:text="akun"
             android:textSize="16dp" />
@@ -85,6 +90,7 @@
             android:layout_marginStart="150dp"
             android:layout_marginTop="140dp"
             android:text="Pegawai"
+            android:textColor="@color/text"
             android:textSize="16dp" />
 
         <ImageView
@@ -100,6 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
             android:layout_marginTop="195dp"
+            android:textColor="@color/text"
             android:text="cabang"
             android:textSize="16dp" />
 
@@ -129,6 +136,7 @@
             android:layout_marginStart="42dp"
             android:layout_marginTop="90dp"
             android:text="Printer"
+            android:textColor="@color/text"
             android:textSize="16dp" />
 
         <ImageView
@@ -155,6 +163,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="90dp"
             android:text="Laporan"
+            android:textColor="@color/text"
             android:textSize="16dp" />
 
         <ImageView
@@ -179,6 +188,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="90dp"
             android:text="Tambahan"
+            android:textColor="@color/text"
             android:textSize="16dp" />
 
         <ImageView
@@ -202,6 +212,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="90dp"
+            android:textColor="@color/text"
             android:text="Layanan"
             android:textSize="16dp" />
 
@@ -226,6 +237,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="90dp"
+            android:textColor="@color/text"
             android:text="Pelanggan"
             android:textSize="16dp" />
 
@@ -252,6 +264,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="90dp"
             android:text="Transaksi"
+            android:textColor="@color/text"
             android:textSize="16dp" />
 
         <ImageView

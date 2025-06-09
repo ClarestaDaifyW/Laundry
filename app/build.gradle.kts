@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-parcelize")
     alias(libs.plugins.google.gms.google.services)
 }
+
 
 android {
     namespace = "com.sagara.laundry"

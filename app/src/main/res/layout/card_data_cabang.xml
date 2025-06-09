@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="41dp"
-        android:background="#CA8787">
+        android:background="@color/button">
 
         <TextView
             android:id="@+id/TvCard_ID_Cabang"
@@ -19,7 +19,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
             android:text="ID Cabang"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="italic" />
     </RelativeLayout>
@@ -38,6 +38,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
             android:text="Nama Cabang"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -48,6 +49,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_Almt"
+            android:textColor="@color/text"
             android:textStyle="normal"
             android:textSize="17dp" />
 
@@ -58,6 +60,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvCARD_PELANGGAN_NoHP"
+            android:textColor="@color/text"
             android:textStyle="normal"
             android:textSize="17dp" />
 
@@ -66,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:textColor="@color/text"
             android:layout_marginTop="8dp"
             android:text="Layanan yang tersedia"
             android:textSize="18dp"
@@ -85,8 +89,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_HUBUNGI"
                 android:textSize="18dp"
+                android:textColor="@color/text"
                 android:textStyle="normal"
-                android:backgroundTint="#CA8787"/>
+                android:backgroundTint="@color/button"/>
 
             <Button
                 android:id="@+id/btn_LIHAT"
@@ -94,9 +99,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:text="@string/btn_LIHAT"
+                android:textColor="@color/text"
                 android:textSize="18dp"
                 android:textStyle="normal"
-                android:backgroundTint="#CA8787"/>
+                android:backgroundTint="@color/button"/>
 
 
         </LinearLayout>
