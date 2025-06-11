@@ -47,11 +47,12 @@
         app:layout_constraintTop_toBottomOf="@id/tanggal">
 
         <TextView
+            android:id="@+id/estimasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            android:text="Estimasi Hari ini"
+            android:text="@string/estimasi"
             android:textColor="@color/text"
             android:textSize="17dp"
             android:textStyle="bold" />
@@ -83,11 +84,12 @@
             android:background="@color/black" />
 
         <TextView
+            android:id="@+id/Transaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="115dp"
-            android:text="Transaksi"
+            android:text="@string/Transaksi"
             android:textColor="@color/text"
             android:textSize="16dp" />
 
@@ -104,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="135dp"
             android:layout_marginTop="115dp"
-            android:text="Pelanggan"
+            android:text="@string/Pelanggan"
             android:textColor="@color/text"
             android:textSize="16dp" />
 
@@ -121,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="245dp"
             android:layout_marginTop="115dp"
-            android:text="Laporan"
+            android:text="@string/Laporan"
             android:textColor="@color/text"
             android:textSize="16dp" />
 
@@ -139,7 +141,7 @@
         android:id="@+id/tvsiap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Siap melayani pelanggan dengan setulus hati"
+        android:text="@string/tvsiap"
         android:textSize="17dp"
         android:textStyle="bold"
         android:textColor="@color/text"
@@ -152,7 +154,7 @@
         android:id="@+id/Tvjangan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jangan kecewakan Pelanggan"
+        android:text="@string/Tvjangan"
         android:textSize="17dp"
         android:layout_marginTop="5dp"
         android:layout_marginStart="30dp"
@@ -173,7 +175,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Akun"
+            android:text="@string/Akun"
             android:textSize="16dp"
             android:layout_marginTop="80dp"
             android:textColor="@color/text"
@@ -199,7 +201,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Layanan"
+            android:text="@string/Layanan"
             android:textSize="16dp"
             android:textColor="@color/text"
             android:layout_marginTop="80dp"
@@ -224,7 +226,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tambahan"
+            android:text="@string/btnTambahan"
             android:textSize="16dp"
             android:layout_marginTop="80dp"
             android:textColor="@color/text"
@@ -252,7 +254,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="80dp"
-            android:text="Pegawai"
+            android:text="@string/Pegawai"
             android:textColor="@color/text"
             android:textSize="16dp"/>
 
@@ -275,7 +277,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cabang"
+            android:text="@string/Cabang"
             android:textColor="@color/text"
             android:textSize="16dp"
             android:layout_marginTop="80dp"

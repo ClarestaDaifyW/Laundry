@@ -81,10 +81,10 @@ class Transaksi : AppCompatActivity() {
         btnProses.setOnClickListener {
             when {
                 namaPelanggan == "-" || noHpPelanggan == "-" -> {
-                    Toast.makeText(this, "Silakan pilih pelanggan terlebih dahulu.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,  getString(R.string.choose_customer), Toast.LENGTH_SHORT).show()
                 }
                 namaLayanan == "-" || hargaLayanan == "-" -> {
-                    Toast.makeText(this, "Silakan pilih layanan terlebih dahulu.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.choose_service), Toast.LENGTH_SHORT).show()
                 }
                 else -> {
                     val intent = Intent(this, KonfirmasiData::class.java).apply {
@@ -129,7 +129,7 @@ class Transaksi : AppCompatActivity() {
                     val harga = data.getStringExtra("harga") ?: "-"
 
                     if (listTambahan.any { it.id_tambahan == id }) {
-                        Toast.makeText(this, "Layanan tambahan sudah dipilih", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.LayananTerpilih), Toast.LENGTH_SHORT).show()
                         return
                     }
 

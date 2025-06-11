@@ -25,7 +25,7 @@
                 android:id="@+id/TvJudul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Konfirmasi Data"
+                android:text="@string/TvJudul"
                 android:textSize="20dp"
                 android:gravity="center"
                 android:textColor="@color/text"
@@ -37,7 +37,7 @@
                 android:id="@+id/TvNamaPelanggan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Pelanggan"
+                android:text="@string/NamaPelanggan"
                 android:textColor="@color/text"
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"
@@ -46,7 +46,7 @@
                 android:id="@+id/TvNomor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NoHp"
+                android:text="@string/TvIsi2"
                 android:textColor="@color/text"
                 android:textSize="17dp"
                 android:layout_marginTop="8dp"/>
@@ -55,7 +55,7 @@
                 android:id="@+id/TvNamaLayanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Layanan"
+                android:text="@string/TvIsi3"
                 android:textStyle="bold"
                 android:textColor="@color/text"
                 android:layout_marginTop="15dp"
@@ -64,7 +64,7 @@
                 android:id="@+id/TvHarga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Harga"
+                android:text="@string/Tv_Harga"
                 android:textColor="@color/text"
                 android:textSize="17dp"
                 android:layout_marginTop="8dp"/>
@@ -73,7 +73,7 @@
                 android:id="@+id/TvJudulLT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Layanan Tambahan :"
+                android:text="@string/TvJudul3"
                 android:textStyle="bold"
                 android:textColor="@color/text"
                 android:layout_marginTop="15dp"
@@ -114,21 +114,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
+            android:layout_gravity="center"
             android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginBottom="25dp"
             android:orientation="horizontal"
             >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_marginStart="28dp"
-                android:layout_marginEnd="15dp"
-                android:padding="15dp"
-                android:text="Total Bayar :"
+                android:text="@string/TotalBayar"
                 android:textColor="@color/text"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -148,28 +146,31 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="bottom"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp">
 
             <Button
                 android:id="@+id/btPilihBatal"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:text="Batal"
+                android:text="@string/Batal"
                 android:textSize="16dp"
                 android:textColor="@color/text"
                 android:backgroundTint="@color/button"
                 android:layout_marginStart="25dp"
-                android:layout_marginEnd="10dp" />
+                />
 
             <Button
                 android:id="@+id/prosestransaksi"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:text="Pembayaran"
+                android:text="@string/Pembayaran"
                 android:textColor="@color/text"
                 android:backgroundTint="@color/button"
                 android:textSize="16dp"
-                android:layout_marginEnd="25dp" />
+                android:layout_marginStart="8dp"
+                />
         </LinearLayout>
 
 
